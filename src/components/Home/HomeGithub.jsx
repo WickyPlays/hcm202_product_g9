@@ -8,11 +8,11 @@ export default function HomeGithub() {
       <div className='content'>
         <div>
           <p className='subtitle'>Join our link at</p>
-          <p className='title'>https://hcm202-product-g9.github.io</p>
+          <p className='title'>https://wickyplays.github.io/hcm202_product_g9</p>
         </div>
         <div className='github'>
           <p className='subtitle'>Source code</p>
-          <p className='title'>https://github.com/WickyPlays/hcm202-product-g9</p>
+          <p className='title'>https://github.com/WickyPlays/hcm202_product_g9</p>
         </div>
 
       </div>
