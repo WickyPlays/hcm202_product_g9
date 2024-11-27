@@ -1,0 +1,14 @@
+.background {
+  video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: .5;
+    min-width: 100vw; 
+    min-height: 100vh; 
+    width: auto;
+    height: auto;
+  
+  }
+}
