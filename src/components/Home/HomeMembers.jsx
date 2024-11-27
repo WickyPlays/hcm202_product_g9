@@ -1,18 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Box, Typography, Stack } from '@mui/material';
 import './HomeMembers.scss';
 
-const timelineData = [
-  { member: 'Member 1', profession: 'Engineer' },
-  { member: 'Member 2', profession: 'Designer' },
-  { member: 'Member 3', profession: 'Developer' },
-  { member: 'Member 4', profession: 'Manager' },
-];
-
 export default function HomeMembers() {
+
+  const [isFixed, setIsFixed] = useState(false);
+  const homeGithubRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!homeGithubRef.current) return;
+
+      const rect = homeGithubRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      const topVisible = rect.top <= windowHeight * 0.8 && rect.bottom > windowHeight * 0.7;
+
+      setIsFixed(topVisible);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <div className='home-members'>
-      <div className='contents'>
+    <div ref={homeGithubRef} className='home-members'>
+      <div className={`content ${isFixed ? 'fixed' : ''}`}>
         <p className='title'>Thành viên nhóm 9</p>
         <div>
           <div className='node'>

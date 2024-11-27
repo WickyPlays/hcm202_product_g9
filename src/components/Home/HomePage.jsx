@@ -2,7 +2,8 @@ import './HomePage.scss';
 import HomeTitle from './HomeTitle';
 import HomeGithub from './HomeGithub';
 import HomeMembers from './HomeMembers';
-import { useState, useEffect } from 'react';
+import HomeFooter from './HomeFooter';
+import HomeContent from '../HomeContent/HomeContent';
 
 export default function HomePage() {
 
@@ -11,6 +12,8 @@ export default function HomePage() {
       <HomeTitle />
       <HomeGithub />
       <HomeMembers />
+      <HomeContent />
+      <HomeFooter />
     </div>
   );
 }

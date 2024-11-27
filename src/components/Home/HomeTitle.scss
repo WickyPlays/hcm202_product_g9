@@ -1,10 +1,10 @@
 @import "../../commons/common.scss";
 
 .home-title {
-  min-height: calc(100vh);
+  min-height: 100vh;
+
   .content {
-    width: 100vw;
-    height: 100vh;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,6 +13,18 @@
     padding: 0 20vw;
     margin-bottom: 50vh;
     z-index: 10;
+    opacity: 0;
+
+    &.fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1000;
+      opacity: 1;
+      transition: opacity .2s ease;
+    }
 
     .title {
       animation-delay: 0s;
@@ -32,6 +44,21 @@
     h1 {
       animation-delay: 0.4s;
       margin-top: 35px;
+      font-size: 45px;
+    }
+
+    .footer {
+      position: absolute;
+      z-index: 5;
+      bottom: 15px;
+      opacity: .75;
+      font-size: 13px;
+    }
+
+    .lecturer {
+      margin-top: 40px;
+      font-size: 20px;
+      font-size: 600;
     }
   }
 }
