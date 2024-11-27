@@ -18,11 +18,36 @@
 
   .subtitle {
     font-size: 20px;
+    margin-bottom: 10px;
   }
 
   .title {
     font-size: 35px;
     font-weight: 700;
+    color: #FFF;
+    padding: 3px 20px;
+    position: relative;
+    transition: color 0.2s ease-in-out;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      z-index: -1;
+      background-color: $primary-color;
+      transition: width 0.2s ease-in-out;
+      border-radius: 5px;
+    }
+    
+    &:hover {
+      color: #000000;
+      &::after {
+        width: 100%;
+      }
+    }
   }
 
   .github {

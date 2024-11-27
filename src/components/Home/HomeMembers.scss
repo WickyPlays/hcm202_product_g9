@@ -1,0 +1,61 @@
+@import '../../commons/common.scss';
+
+.home-members {
+  min-height: 100vh;
+
+  .contents {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 20vw;
+    margin-bottom: 50vh;
+    z-index: 10;
+  }
+
+  .title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 60px;
+  }
+
+  .node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .circle {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background-color: #bbbbbb;
+    border: 5px solid $primary-color;
+  }
+
+  .name {
+    font-size: 22px;
+    margin: 10px 0;
+    font-weight: 700;
+  }
+
+  .line {
+    width: 200px;
+    height: 1px;
+    background-color: #FFF;
+    margin-bottom: 10px;
+  }
+
+  .role {
+    font-size: 20px;
+    font-style: italic;
+  }
+
+  .group {
+    display: flex;
+    margin-top: 60px;
+    gap: 85px;
+  }
+}
