@@ -1,0 +1,44 @@
+@import '../../commons/common.scss';
+
+.content-gemini-prompt {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: transparent;
+
+  h1 {
+    font-size: 25px;
+    color: #000;
+    background-color: $primary-color;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-bottom: 25px;
+  }
+
+  textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 0.5px solid #ccc;
+    background-color: #000000 !important;
+    margin-bottom: 20px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .btn-generate-prompt {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+
+}

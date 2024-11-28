@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
+import './ContentGeminiPrompt.scss'
+import { Button } from "@mui/material";
 
-const ContentGeminiPrompt = () => {
+export default function ContentGeminiPrompt() {
   const [inputText, setInputText] = useState("");
   const [resultText, setResultText] = useState("");
   const [loading, setLoading] = useState(false);
@@ -37,50 +39,24 @@ const ContentGeminiPrompt = () => {
   };
 
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: "20px",
-        backgroundColor: "#f9f9f9",
-      }}
+    <div className="content-gemini-prompt"
     >
-      <h1>Content Gemini Prompt</h1>
+      <h1>Hãy cùng thử AI về chủ đề nhé!</h1>
       <textarea
         value={inputText}
         onChange={(e) => setInputText(e.target.value)}
         placeholder="Enter your prompt here (e.g., Lyrics for happy birthday song)"
         rows="5"
         cols="50"
-        style={{
-          padding: "10px",
-          borderRadius: "5px",
-          border: "1px solid #ccc",
-          marginBottom: "20px",
-          fontSize: "16px",
-          width: "100%",
-          maxWidth: "500px",
-        }}
       />
-      <button
+      <Button
+        variant="contained"
+        className="btn-generate-prompt"
         onClick={generatePrompt}
         disabled={loading}
-        style={{
-          padding: "10px 20px",
-          fontSize: "16px",
-          borderRadius: "5px",
-          backgroundColor: "#007BFF",
-          color: "#fff",
-          border: "none",
-          cursor: "pointer",
-          marginBottom: "20px",
-        }}
       >
         {loading ? "Generating..." : "Generate Prompt"}
-      </button>
+      </Button>
       {error && <p style={{ color: "red" }}>{error}</p>}
       {resultText && (
         <div
@@ -89,17 +65,14 @@ const ContentGeminiPrompt = () => {
             padding: "20px",
             border: "1px solid #ccc",
             borderRadius: "5px",
-            backgroundColor: "#fff",
             maxWidth: "500px",
             whiteSpace: "pre-wrap",
           }}
         >
-          <h3>Generated Content:</h3>
+          <h3>Kết quả:</h3>
           <p>{resultText}</p>
         </div>
       )}
     </div>
   );
 };
-
-export default ContentGeminiPrompt;
