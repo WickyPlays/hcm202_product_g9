@@ -27,21 +27,26 @@ export default function Content11() {
     "Mặc dù tư tưởng Hồ Chí Minh được hình thành trong bối cảnh của thế kỷ XX, nhưng giá trị của tư tưởng này vẫn có ý nghĩa sâu sắc trong thời kỳ hiện đại, khi thế giới đang đối mặt với nhiều thách thức toàn cầu. Người đã nhận thức được tầm quan trọng của việc xây dựng các liên minh mạnh mẽ để giải quyết các vấn đề toàn cầu, từ biến đổi khí hậu đến bảo vệ hòa bình và quyền lợi của các dân tộc nhỏ.",
   ];
 
+  const handleNavClick = (index) => {
+    const sections = document.querySelectorAll('.section-content-11');
+    sections[index].scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll('.section-content-11');
-      const progressBar = document.querySelector('.progress-bar');
       const viewportHeight = window.innerHeight;
 
-      let maxVisibleHeight = 0;
+      let minDistanceToMiddle = Infinity;
       let active = null;
 
       sections.forEach((section, index) => {
         const rect = section.getBoundingClientRect();
-        const visibleHeight = Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0);
+        const middleOfViewport = viewportHeight / 2;
+        const distanceToMiddle = Math.abs(rect.top + rect.height / 2 - middleOfViewport);
 
-        if (visibleHeight > maxVisibleHeight) {
-          maxVisibleHeight = visibleHeight;
+        if (distanceToMiddle < minDistanceToMiddle) {
+          minDistanceToMiddle = distanceToMiddle;
           active = index + 1;
         }
       });
@@ -49,17 +54,13 @@ export default function Content11() {
       setActiveSection(active);
 
       const totalHeight = document.documentElement.scrollHeight - viewportHeight;
-      const scrollProgress = (window.scrollY / totalHeight) * 120;
+      const scrollProgress = (window.scrollY / totalHeight) * 100;
       setProgress(scrollProgress);
 
       const firstSectionTop = sections[0]?.getBoundingClientRect().top;
       const lastSectionBottom = sections[sections.length - 1]?.getBoundingClientRect().bottom;
 
-      if (firstSectionTop <= viewportHeight && lastSectionBottom >= 0) {
-        setShowNavbar(true);
-      } else {
-        setShowNavbar(false);
-      }
+      setShowNavbar(firstSectionTop <= viewportHeight && lastSectionBottom >= 0);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -68,16 +69,15 @@ export default function Content11() {
 
   useEffect(() => {
     const calculateTransform = () => {
-      const navbarContent = document.querySelector('.navbar-content');
-      const highlightedItem = document.querySelector('.nav-item.highlighted');
+      const navbarContent = document.querySelector('.navbar-content-11');
+      const highlightedItem = document.querySelector('.nav-item-11.highlighted');
 
       if (navbarContent && highlightedItem) {
         const navbarCenter = navbarContent.offsetWidth / 2;
-        const itemOffset =
-          highlightedItem.offsetLeft + highlightedItem.offsetWidth / 2;
+        const itemOffset = highlightedItem.offsetLeft + highlightedItem.offsetWidth / 2;
         return `translateX(${navbarCenter - itemOffset}px)`;
       }
-      return translateX;
+      return translateX.current;
     };
 
     translateX.current = calculateTransform();
@@ -99,11 +99,8 @@ export default function Content11() {
         </div>
       </div>
 
-      <div
-        className={`navbar ${showNavbar ? 'show' : 'hide'}`}
-      >
-        <div
-          className="navbar-content"
+      <div className={`navbar ${showNavbar ? 'show' : 'hide'}`}>
+        <div className="navbar-content-11"
           style={{
             transform: translateX.current,
             transition: 'transform 0.3s ease',
@@ -112,13 +109,14 @@ export default function Content11() {
           {sectionsTitles.map((title, index) => (
             <span
               key={index}
-              className={`nav-item ${activeSection === index + 1 ? 'highlighted' : ''}`}
+              className={`nav-item-11 ${activeSection === index + 1 ? 'highlighted' : ''}`}
+              onClick={() => handleNavClick(index)}
             >
               {title}
             </span>
           ))}
         </div>
-        <div className="progress-bar" style={{ width: `${activeSection * 100 / sectionsTitles.length}%` }}></div>
+        <div className="progress-bar" style={{ width: `${(activeSection * 100) / sectionsTitles.length}%` }}></div>
       </div>
     </div>
   );

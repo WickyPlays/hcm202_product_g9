@@ -33,6 +33,7 @@ export default function Content24() {
       <div className="content">
         <p className="tag">2.2. Lực lượng đoàn kết quốc tế và hình thức tổ chức</p>
 
+        <p className='title'>Lực lượng chủ yếu</p>
         <div className="section-list">
           {sections.map((section, index) => (
             <div key={index} className={`section ${openSections[index] ? 'active' : ''}`}>
@@ -51,6 +52,15 @@ export default function Content24() {
           ))}
         </div>
 
+      </div>
+      <div className='content-2'>
+        <p className='title'>Hình thức tổ chức đoàn kết quốc tế</p>
+        <div className='list'>
+          <div className='list-node'>Mặt trận đại đoàn kết dân tộc</div>
+          <div className='list-node'>Mặt trận đoàn kết Việt - Miên - Lào</div>
+          <div className='list-node'>Mặt trận nhân dân Á - Phi</div>
+          <div className='list-node'>Mặt trận nhân dân thế giới</div>
+        </div>
       </div>
     </div>
   );
