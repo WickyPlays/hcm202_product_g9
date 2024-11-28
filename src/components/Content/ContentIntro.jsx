@@ -1,10 +1,21 @@
 import './ContentIntro.scss'
+import circle from '../../assets/circle.png';
 
 export default function ContentIntro() {
   return (
     <div className="content-intro">
-      <div className='content'>
-        
+       <div className='intro'>
+        <div className='circle' style={{backgroundImage: 'url(' + circle + ')' }}></div>
+        <div className='circle1' style={{backgroundImage: 'url(' + circle + ')' }}></div>
+        <p className='title'>Lời nói đầu</p>
+        <p className='course'>Tư tưởng Hồ Chí Minh về Đoàn kết Quốc tế</p>
+        <div className='content-list'>
+          <p><span>1</span> Lời nói đầu, giới thiệu chung</p>
+          <p><span>2</span> Nội dung tư tưởng về đoàn kết quốc tế</p>
+          <p><span>3</span> Giải quyết câu hỏi: Mối liên hệ giữa “Dĩ bất biến, ứng vạn biến” và trường phái ngoại giao “Cây tre Việt Nam”</p>
+          <p><span>4</span> Quiz minigame</p>
+          <p><span>5</span> Tương tác AI</p>
+        </div>
       </div>
     </div>
   )

@@ -41,10 +41,10 @@
     background-position: center;
     background-size: contain;
     background-color: transparent;
-    animation: spin 30s linear infinite;
+    animation: spinGithub 30s linear infinite;
     opacity: .2;
 
-    @keyframes spin {
+    @keyframes spinGithub {
       0% {
         transform: translate(-50%, -50%) rotate(0deg);
       }
