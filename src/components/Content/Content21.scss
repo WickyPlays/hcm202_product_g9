@@ -1,0 +1,43 @@
+@import '../../commons/common.scss';
+
+.content-21 {
+
+  .grid {
+    display: grid;
+    grid-template-columns: 0.6fr 0.4fr;
+    padding: 0 10rem;
+  }
+
+  .title {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+
+  .node {
+    font-size: 28px;
+    color: #000;
+    background-color: $primary-color;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 20px;
+    color: #000;
+    background-color: #ffffff;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .content {
+    font-size: 19px;
+  }
+}

@@ -29,7 +29,7 @@ export default function Content11() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = document.querySelectorAll('.section');
+      const sections = document.querySelectorAll('.section-content-11');
       const progressBar = document.querySelector('.progress-bar');
       const viewportHeight = window.innerHeight;
 
@@ -90,7 +90,7 @@ export default function Content11() {
           {sectionsTitles.map((title, index) => (
             <div
               key={index}
-              className={`section ${activeSection === index + 1 ? 'active' : ''}`}
+              className={`section-content-11 ${activeSection === index + 1 ? 'active' : ''}`}
             >
               <h2>{index + 1}. {title}</h2>
               <p>{sectionsContent[index]}</p>

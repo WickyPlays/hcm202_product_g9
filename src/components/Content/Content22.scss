@@ -1,0 +1,72 @@
+@import "../../commons/common.scss";
+
+.content-22 {
+  min-height: 100vh;
+
+  .content {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20vw;
+    z-index: 20;
+    opacity: 0;
+
+    &.fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1000;
+      opacity: 1;
+      z-index: 20;
+      transition: opacity 0.2s ease;
+    }
+  }
+
+  .circle {
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    width: 550px;
+    height: 550px;
+    background-position: center;
+    background-size: contain;
+    background-color: transparent;
+    animation: spinGithub 30s linear infinite;
+    opacity: 0.2;
+
+    @keyframes spinGithub {
+      0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+  }
+
+  .quote {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &-title {
+      font-size: 26px;
+      margin-bottom: 30px;
+    }
+
+    &-content {
+      font-size: 40px;
+      font-weight: 700;
+      text-align: left;
+    }
+  }
+}
