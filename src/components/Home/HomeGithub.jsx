@@ -13,7 +13,7 @@ export default function HomeGithub() {
       const rect = homeGithubRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      const topVisible = rect.top <= windowHeight * 0.6 && rect.bottom > windowHeight * 0.8;
+      const topVisible = rect.top <= windowHeight * 0.5 && rect.bottom > windowHeight * 0.8;
 
       setIsFixed(topVisible);
     };

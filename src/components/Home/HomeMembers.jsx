@@ -14,7 +14,7 @@ export default function HomeMembers() {
       const rect = homeGithubRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      const topVisible = rect.top <= windowHeight * 0.8 && rect.bottom > windowHeight * 0.7;
+      const topVisible = rect.top <= windowHeight * 0.8 && rect.bottom > windowHeight * 0.01;
 
       setIsFixed(topVisible);
     };
