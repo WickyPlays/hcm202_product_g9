@@ -1,0 +1,117 @@
+.content-32 {
+  min-height: 100vh;
+  margin-top: 300px;
+
+  .tag {
+    display: inline-block;
+    font-size: 20px;
+    color: #000;
+    background-color: #ffffff;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 0 10rem;
+    margin-bottom: 45px;
+  }
+
+  p {
+    font-size: 19px;
+  }
+
+  .content {
+    padding: 0 10rem;
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 50px;
+  }
+
+  .section-content {
+    width: 100%;
+
+    p {
+      width: 100%;
+      max-width: 100% !important;
+    }
+  }
+
+  .section-content-32 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0.5;
+    transition: opacity 0.5s ease-in-out;
+    margin-bottom: 200px;
+
+    &.left {
+      align-items: flex-start !important;
+    }
+
+    &.right {
+      align-items: flex-end;
+    }
+
+    &.active {
+      opacity: 1;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    p {
+      max-width: 50%;
+    }
+  }
+
+  .navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(52, 0, 0);
+    color: white;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    transform: translateY(100%);
+    transition: transform 0.5s ease-in-out;
+    z-index: 15;
+
+    &.show {
+      transform: translateY(0);
+    }
+
+    .navbar-content-32 {
+      display: flex;
+      overflow-x: auto;
+      gap: 5rem;
+      white-space: nowrap;
+      scroll-behavior: smooth;
+
+      .nav-item-32 {
+        white-space: nowrap;
+        font-size: 0.9rem;
+        opacity: 0.6;
+        transition: opacity 0.3s ease;
+        cursor: pointer;
+
+        &.highlighted {
+          opacity: 1;
+          color: yellow;
+        }
+      }
+    }
+
+    .progress-bar {
+      height: 3px;
+      width: 100%;
+      background-color: yellow;
+      transition: width 0.3s ease-in-out;
+    }
+  }
+}
