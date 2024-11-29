@@ -6,6 +6,7 @@ import Content23 from '../Content/Content23'
 import Content24 from '../Content/Content24'
 import Content25 from '../Content/Content25'
 import Content26 from '../Content/Content26'
+import Content31 from '../Content/Content31'
 import ContentCourseIntro from '../Content/ContentCourseIntro'
 import ContentGeminiPrompt from '../Content/ContentGeminiPrompt'
 import ContentIntro from '../Content/ContentIntro'
@@ -24,6 +25,7 @@ export default function HomeContent() {
       <Content24 />
       <Content25 />
       <Content26 />
+      <Content31 />
       <ContentGeminiPrompt />
     </div>
   )

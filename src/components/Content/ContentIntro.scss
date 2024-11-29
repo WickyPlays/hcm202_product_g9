@@ -78,7 +78,7 @@
     }
   }
 
-  .circle {
+  .circle-intro-0 {
     position: absolute;
     z-index: 0;
     top: 50%;
@@ -89,10 +89,10 @@
     background-position: center;
     background-size: contain;
     background-color: transparent;
-    animation: spin 30s linear infinite;
+    animation: spin-intro-0 30s linear infinite;
     opacity: .4;
 
-    @keyframes spin {
+    @keyframes spin-intro-0 {
       0% {
         transform: translate(70%, -50%) rotate(360deg);
       }
@@ -102,7 +102,7 @@
     }
   }
 
-  .circle1 {
+  .circle-intro-1 {
     position: absolute;
     z-index: 1;
     top: 50%;
@@ -113,10 +113,10 @@
     background-position: center;
     background-size: contain;
     background-color: transparent;
-    animation: spin1 30s linear infinite;
+    animation: spin-intro-1 30s linear infinite;
     opacity: .4;
 
-    @keyframes spin1 {
+    @keyframes spin-intro-1 {
       0% {
         transform: translate(-170%, -50%) rotate(0deg);
       }
