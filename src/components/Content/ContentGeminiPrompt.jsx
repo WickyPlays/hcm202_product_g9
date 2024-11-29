@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import './ContentGeminiPrompt.scss'
+import './ContentGeminiPrompt.scss';
 import { Button } from "@mui/material";
 
 export default function ContentGeminiPrompt() {
@@ -14,21 +14,13 @@ export default function ContentGeminiPrompt() {
     setError("");
     try {
       const response = await axios.post(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${import.meta.env.VITE_GEMINI_TOKEN}`,
+        "https://simple-gemini-express.onrender.com/api/generate-prompt",
         {
-          contents: [
-            {
-              parts: [
-                {
-                  text: inputText || "Lyrics for happy birthday song",
-                },
-              ],
-            },
-          ],
+          text: inputText || "Lyrics for happy birthday song",
         }
       );
-      const text =
-        response?.data?.candidates?.[0]?.content?.parts?.[0]?.text || "No response received";
+
+      const text = response?.data?.message || "No response received";
       setResultText(text);
     } catch (err) {
       setError("Error generating content. Please try again.");
@@ -39,8 +31,7 @@ export default function ContentGeminiPrompt() {
   };
 
   return (
-    <div className="content-gemini-prompt"
-    >
+    <div className="content-gemini-prompt">
       <h1>Hãy cùng thử AI về chủ đề nhé!</h1>
       <textarea
         value={inputText}
@@ -75,4 +66,4 @@ export default function ContentGeminiPrompt() {
       )}
     </div>
   );
-};
+}
