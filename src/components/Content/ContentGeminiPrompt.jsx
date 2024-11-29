@@ -14,7 +14,7 @@ export default function ContentGeminiPrompt() {
     setError("");
     try {
       const response = await axios.post(
-        "https://simple-gemini-express.onrender.com/api/generate-prompt",
+        `${import.meta.env.VITE_GEMINI_URL}`,
         {
           text: inputText || "Lyrics for happy birthday song",
         }
