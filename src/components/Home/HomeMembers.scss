@@ -1,4 +1,4 @@
-@import "../../commons/common.scss";
+@use "../../commons/common.scss";
 
 .home-members {
   min-height: 100vh;
@@ -35,7 +35,7 @@
     font-size: 28px;
     font-weight: 600;
     margin-bottom: 60px;
-    background-color: $primary-color;
+    background-color: common.$primary-color;
     color: #000;
     padding: 3px 20px;
     border-radius: 15px;
@@ -57,7 +57,7 @@
       height: 130px;
       border-radius: 50%;
       background-color: #bbbbbb;
-      border: 5px solid $primary-color;
+      border: 5px solid common.$primary-color;
 
       @media (max-width: 768px) {
         width: 100px;

@@ -1,4 +1,4 @@
-@import '../../commons/common.scss';
+@use '../../commons/common.scss';
 
 .content-21 {
 
@@ -27,7 +27,7 @@
   .node {
     font-size: 28px;
     color: #000;
-    background-color: $primary-color;
+    background-color: common.$primary-color;
     width: 40px;
     height: 40px;
     display: inline-flex;

@@ -1,4 +1,4 @@
-@import '../../commons/common.scss';
+@use '../../commons/common.scss';
 
 .content-24 {
   .title {
@@ -137,7 +137,7 @@
       box-sizing: border-box;
 
       &:hover {
-        background-color: $primary-color;
+        background-color: common.$primary-color;
         color: #000;
       }
     }
