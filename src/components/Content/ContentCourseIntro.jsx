@@ -1,10 +1,11 @@
 import './ContentCourseIntro.scss'
+import logo from '../../assets/contentintro.jpg'
 
 export default function ContentCourseIntro() {
   return (
     <div className="content-course-intro">
       <div>
-
+        <img src={logo} alt='logo' />
       </div>
       <div>
         <p className='title'><span className='node'>1</span> Giới thiệu chung</p>

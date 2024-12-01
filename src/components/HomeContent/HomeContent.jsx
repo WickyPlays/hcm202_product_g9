@@ -8,8 +8,9 @@ import Content25 from '../Content/Content25'
 import Content26 from '../Content/Content26'
 import Content31 from '../Content/Content31'
 import Content32 from '../Content/Content32'
+import Content41 from '../Content/Content41'
+import Content51 from '../Content/Content51'
 import ContentCourseIntro from '../Content/ContentCourseIntro'
-import ContentGeminiPrompt from '../Content/ContentGeminiPrompt'
 import ContentIntro from '../Content/ContentIntro'
 import './HomeContent.scss'
 
@@ -28,7 +29,8 @@ export default function HomeContent() {
       <Content26 />
       <Content31 />
       <Content32 />
-      <ContentGeminiPrompt />
+      <Content41 />
+      <Content51 />
     </div>
   )
 } 

@@ -9,6 +9,8 @@
     padding: 0 10rem;
     display: grid;
     grid-template-columns: 0.6fr 0.4fr;
+    column-gap: 50px;
+    box-sizing: border-box;
 
     @media (max-width: 1024px) {
       padding: 0 3rem;
@@ -80,6 +82,33 @@
       width: 100%;
       background-color: yellow;
       transition: width 0.3s ease-in-out;
+    }
+  }
+
+  .image-content-11 {
+    position: relative;
+  }
+
+  
+  img {
+    height: auto;
+    position: fixed;
+    z-index: 25;
+    transition: opacity 0.1s ease-in-out;
+    opacity: 1;
+
+    &.fade-in {
+      opacity: 1;
+    }
+
+    &.fade-out {
+      opacity: 0;
+    }
+  }
+
+  .img-slideshow {
+    @media (max-width: 1024px) {
+      display: none;
     }
   }
 }

@@ -1,5 +1,10 @@
 import { useEffect, useState, useRef } from "react";
 import './Content32.scss';
+import image1 from '../../assets/content32_1.jpg';
+import image2 from '../../assets/content32_2.jpg';
+import image3 from '../../assets/content32_3.jpg';
+import image4 from '../../assets/content32_4.jpg';
+import image5 from '../../assets/content32_5.jpg';
 
 export default function Content32() {
   const [activeSection, setActiveSection] = useState(null);
@@ -12,7 +17,7 @@ export default function Content32() {
     "Khái niệm ngoại giao 'Cây tre Việt Nam'",
     "Mối liên hệ giữa 'Dĩ bất biến, ứng vạn biến' và ngoại giao 'Cây tre Việt Nam'",
     "Ngoại giao 'Cây tre Việt Nam' trong thời hiện đại",
-    "Kết luận"
+    "Kết luận",
   ];
 
   const sectionsContent = [
@@ -39,6 +44,7 @@ export default function Content32() {
     </div>,
     "Câu nói “Dĩ bất biến, ứng vạn biến” của Hồ Chí Minh không chỉ là chiến lược sống còn trong bối cảnh đầy biến động của lịch sử, mà còn là kim chỉ nam cho ngoại giao Việt Nam. Trường phái ngoại giao “Cây tre Việt Nam” phản ánh bản lĩnh của dân tộc Việt Nam trong việc giữ vững nguyên tắc, nhưng vẫn linh hoạt, thích nghi với tình hình quốc tế thay đổi."
   ];
+  const images = [image1, image2, image3, image4, image5];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,11 +74,7 @@ export default function Content32() {
       const firstSectionTop = sections[0]?.getBoundingClientRect().top;
       const lastSectionBottom = sections[sections.length - 1]?.getBoundingClientRect().bottom;
   
-      if (firstSectionTop <= viewportHeight && lastSectionBottom >= 0) {
-        setShowNavbar(true);
-      } else {
-        setShowNavbar(false);
-      }
+      setShowNavbar(firstSectionTop <= viewportHeight && lastSectionBottom >= 0);
     };
   
     window.addEventListener('scroll', handleScroll);
@@ -95,22 +97,38 @@ export default function Content32() {
     translateX.current = calculateTransform();
   }, [activeSection]);
 
-  const handleNavClick = (index) => {
-    const sections = document.querySelectorAll('.section-content-32');
-    sections[index].scrollIntoView({ behavior: 'smooth', block: 'center' });
-  };
-
   return (
     <div className="content-32">
-      <p className="tag">Ngoại giao “Cây tre Việt Nam”</p>
+      <p className="tag">"Dĩ bất biến, ứng vạn biến" của Hồ Chí Minh</p>
       <div className="content">
         {sectionsTitles.map((title, index) => (
           <div
             key={index}
-            className={`section-content-32 ${activeSection === index + 1 ? 'active' : ''} ${index % 2 === 0 ? 'left' : 'right'}`}
+            className={`section-content-32 ${activeSection === index + 1 ? 'active' : ''}`}
           >
-            <h2>{index + 1}. {title}</h2>
-            <p>{sectionsContent[index]}</p>
+            <div className={`content-block ${index % 2 === 0 || window.innerWidth < 1024 ? 'left' : 'right'}`}>
+              {window.innerWidth < 1024 || index % 2 === 0 ? (
+                <>
+                  <div className="text">
+                    <h2>{index + 1}. {title}</h2>
+                    <p>{sectionsContent[index]}</p>
+                  </div>
+                  <div className="image">
+                    <img src={images[index]} alt={`Section ${index + 1}`} />
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="image">
+                    <img src={images[index]} alt={`Section ${index + 1}`} />
+                  </div>
+                  <div className="text">
+                    <h2>{index + 1}. {title}</h2>
+                    <p>{sectionsContent[index]}</p>
+                  </div>
+                </>
+              )}
+            </div>
           </div>
         ))}
       </div>

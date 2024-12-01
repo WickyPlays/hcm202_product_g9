@@ -1,6 +1,6 @@
 @import '../../commons/common.scss';
 
-.content-gemini-prompt {
+.content-41 {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -130,5 +130,27 @@
     @media (max-width: 768px) {
       font-size: 14px;
     }
+  }
+
+  .title {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 30px;
+
+    @media (max-width: 768px) {
+      font-size: 25px;
+    }
+  }
+
+  .node {
+    font-size: 28px;
+    color: #000;
+    background-color: $primary-color;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
   }
 }

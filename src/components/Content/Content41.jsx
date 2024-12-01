@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
-import './ContentGeminiPrompt.scss';
+import './Content41.scss';
 import { Button } from "@mui/material";
 import Markdown from 'react-markdown';
 import Brightness5Icon from '@mui/icons-material/Brightness5';
 
-export default function ContentGeminiPrompt() {
+export default function Content41() {
   const prompts = [
     "Tạo bài thơ vần hay liên quan đến chủ đề.",
     "Nêu một ví dụ thực tiễn về đoàn kết toàn dân tộc ở Việt Nam.",
@@ -13,7 +13,7 @@ export default function ContentGeminiPrompt() {
     "Kể một câu chuyện lịch sử Việt Nam thể hiện tinh thần đoàn kết.",
     "Phân tích vai trò của thế hệ trẻ trong việc phát huy tinh thần đoàn kết quốc tế.",
   ];
-  
+
 
   const [selectedPrompt, setSelectedPrompt] = useState(prompts[0]);
   const [resultText, setResultText] = useState("Câu trả lời sẽ hiện ở đây.");
@@ -43,7 +43,8 @@ export default function ContentGeminiPrompt() {
   };
 
   return (
-    <div className="content-gemini-prompt">
+    <div className="content-41">
+      <p className='title'><span className='node'>4</span> Tương tác AI</p>
       <h1>Hãy cùng thử AI về chủ đề nhé!</h1>
       <div className="content">
         <div className='content-input'>

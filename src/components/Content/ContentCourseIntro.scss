@@ -4,13 +4,23 @@
   position: relative;
   display: grid;
   grid-template-columns: 0.4fr 0.6fr;
+  column-gap: 50px;
   min-height: 1000px;
   align-items: center;
   padding: 0 10rem;
   padding-top: 1200px;
   margin-bottom: 300px;
 
-  @media (max-width: 768px) {
+  img {
+    width: 100%;
+    height: auto;
+
+    @media (max-width: 1024px) {
+      margin-bottom: 25px;
+    }
+  }
+
+  @media (max-width: 1024px) {
     padding: 0 2rem;
     padding-top: 1200px;
     grid-template-columns: 1fr;

@@ -1,4 +1,5 @@
 import './Content21.scss'
+import image from '../../assets/content21_1.jpg'
 
 export default function Content21() {
   return (
@@ -10,6 +11,7 @@ export default function Content21() {
           <p className='content'>Hồ Chí Minh nhận thức rõ tầm quan trọng của đoàn kết quốc tế trong cuộc đấu tranh giành độc lập dân tộc và bảo vệ hòa bình thế giới. Người khẳng định rằng cách mạng Việt Nam không thể tách rời khỏi phong trào cách mạng quốc tế. Đoàn kết quốc tế là yếu tố quyết định để xây dựng sức mạnh tổng hợp trong đấu tranh chống đế quốc, thực dân và các thế lực phản động.</p>
         </div>
         <div>
+          <img src={image} alt='21' />
         </div>
       </div>
     </div>
