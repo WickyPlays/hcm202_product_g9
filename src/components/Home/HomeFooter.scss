@@ -15,12 +15,20 @@
 
       p {
         font-size: 15px;
+
+        @media (max-width: 768px) {
+          font-size: 13px;
+        }
       }
 
       .title {
-        font-size: 25px;
+        font-size: 23px;
         font-weight: 600;
         margin-bottom: 10px;
+
+        @media (max-width: 768px) {
+          font-size: 18px;
+        }
       }
     }
   }
@@ -28,7 +36,8 @@
   .copyright {
     margin-top: 100px;
     text-align: center;
-    padding: 5px 0;
+    padding: 8px 0;
     background-color: rgb(67, 0, 0);
+    font-size: 13px;
   }
 }

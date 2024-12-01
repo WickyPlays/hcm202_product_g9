@@ -9,7 +9,11 @@ export default function ContentGeminiPrompt() {
   const prompts = [
     "Tạo bài thơ vần hay liên quan đến chủ đề.",
     "Nêu một ví dụ thực tiễn về đoàn kết toàn dân tộc ở Việt Nam.",
+    "Giải thích khái niệm 'tự do' trong tư tưởng Hồ Chí Minh bằng ví dụ thực tế.",
+    "Kể một câu chuyện lịch sử Việt Nam thể hiện tinh thần đoàn kết.",
+    "Phân tích vai trò của thế hệ trẻ trong việc phát huy tinh thần đoàn kết quốc tế.",
   ];
+  
 
   const [selectedPrompt, setSelectedPrompt] = useState(prompts[0]);
   const [resultText, setResultText] = useState("Câu trả lời sẽ hiện ở đây.");
@@ -61,9 +65,9 @@ export default function ContentGeminiPrompt() {
             onClick={generatePrompt}
             disabled={loading}
           >
-            {loading ? "Generating..." : "Generate Prompt"}
+            {loading ? "Đang phân tích..." : "Xác nhận"}
           </Button>
-          {error && <p style={{ color: "red" }}>{error}</p>}
+          {error && <p style={{ color: "#ffffff" }}>{error}</p>}
         </div>
         <div className='result'>
           {resultText && (

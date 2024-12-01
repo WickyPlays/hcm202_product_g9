@@ -10,10 +10,20 @@
   padding-top: 1200px;
   margin-bottom: 300px;
 
+  @media (max-width: 768px) {
+    padding: 0 2rem;
+    padding-top: 1200px;
+    grid-template-columns: 1fr;
+  }
+
   .title {
     font-size: 30px;
     font-weight: 700;
     margin-bottom: 30px;
+
+    @media (max-width: 768px) {
+      font-size: 25px;
+    }
   }
 
   .node {

@@ -3,6 +3,7 @@
 .content-31 {
   position: relative;
   height: 900px;
+  min-height: 110vh;
   
   .intro {
     height: 900px;
@@ -30,18 +31,16 @@
       z-index: 10;
     }
 
-    .course {
-      color: #FFF;
-      font-size: 25px;
-      z-index: 12;
-      margin-bottom: 20px;
-    }
-
     .question {
       color: #FFF;
       font-size: 32px;
       z-index: 12;
       padding: 0 20rem;
+
+      @media (max-width: 768px) {
+        padding: 0 1.2rem;
+        font-size: 23px;
+      }
     }
 
   }
@@ -51,6 +50,10 @@
     font-weight: 700;
     margin-bottom: 30px;
     z-index: 12;
+
+    @media (max-width: 768px) {
+      font-size: 25px;
+    }
   }
 
   .node {

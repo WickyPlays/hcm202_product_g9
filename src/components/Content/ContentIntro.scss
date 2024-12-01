@@ -33,12 +33,20 @@
       font-size: 45px;
       font-weight: 700;
       z-index: 12;
+
+      @media (max-width: 768px) {
+        font-size: 30px;
+      }
     }
 
     .course {
       color: #FFF;
       font-size: 25px;
       z-index: 12;
+
+      @media (max-width: 768px) {
+        font-size: 16px;
+      }
     }
   }
 
@@ -52,6 +60,10 @@
     width: 50vw;
     word-wrap: break-word;
     gap: 20px;
+
+    @media (max-width: 768px) {
+      width: 80vw;
+    }
     
     p {
       color: #FFF !important;
@@ -59,6 +71,10 @@
       text-align: left; 
       word-break: break-word;
       width: 100%;
+
+      @media (max-width: 768px) {
+        font-size: 16px;
+      }
     }
 
     span {
@@ -75,6 +91,13 @@
       margin-right: 10px;
       font-weight: 700;
       user-select: none;
+
+      @media (max-width: 768px) {
+        min-width: 30px;
+        min-height: 30px;
+        max-width: 30px;
+        max-height: 30px;
+      }
     }
   }
 
