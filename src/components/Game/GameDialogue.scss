@@ -1,0 +1,67 @@
+@use "../../commons/common.scss" as *;
+
+.game-dialog {}
+
+.fullscreen-dialog-game {
+  .MuiBackdrop-root {
+    background-color: rgba(0, 0, 0, 0) !important;
+  }
+
+  .MuiPaper-root {
+    background-color: rgb(126, 0, 0) !important;
+    color: #fff;
+  }
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: $primary-color;
+
+    p {
+      color: #000 !important;
+      font-weight: 600;
+      font-size: 18px;
+    }
+  }
+
+  .btn-close {
+    color: #000 !important;
+  }
+
+  .dialog-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .timer {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .question-block {
+      margin-bottom: 20px;
+
+      p {
+        margin-bottom: 10px;
+        font-size: 16px;
+      }
+
+      .MuiFormControlLabel-root {
+        color: #fff !important;
+      }
+    }
+
+    .submit-button {
+      margin-top: 20px;
+    }
+
+    .score {
+      margin-top: 10px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+}

@@ -5,6 +5,8 @@ import { Button } from "@mui/material";
 import Markdown from 'react-markdown';
 import Brightness5Icon from '@mui/icons-material/Brightness5';
 import InfoIcon from '@mui/icons-material/Info';
+import audio from '../../assets/ai_music.mp3';
+import ContentAudio from "./ContentAudio";
 
 export default function Content41() {
   const prompts = [
@@ -46,49 +48,57 @@ export default function Content41() {
 
   return (
     <div className="content-41">
-      <p className='title'><span className='node'>4</span> Tương tác AI</p>
-      <h1>Hãy cùng thử AI về chủ đề nhé!</h1>
-      <div className="content">
-        <div className='content-input'>
-          <div className="prompt-list">
-            {prompts.map((prompt, index) => (
-              <div
-                key={index}
-                className={`prompt-item ${selectedPrompt === prompt ? 'selected' : ''}`}
-                onClick={() => setSelectedPrompt(prompt)}
-              >
-                <Brightness5Icon />
-                <p>{prompt}</p>
-              </div>
-            ))}
-          </div>
-          <Button
-            variant="contained"
-            className="btn-generate-prompt"
-            onClick={generatePrompt}
-            disabled={loading}
-          >
-            {loading ? "Đang phân tích..." : "Xác nhận"}
-          </Button>
-          {error && <p style={{ color: "#ffffff" }}>{error}</p>}
-        </div>
-        <div className='content-result'>
-          <div className='result'>
-            {resultText && (
-              <Markdown>{resultText}</Markdown>
-            )}
-          </div>
-          <div className='note'>
-            <InfoIcon className='info-icon' />
-            <div>
-              <p>Cảnh báo: Nội dung do AI tạo ra có thể không chính xác.</p>
-              <p>Vui lòng kiểm tra trước khi sử dụng nội dung.</p>
+      <div className="content-ai">
+        <p className='title'><span className='node'>4</span> Tương tác AI</p>
+        <h1>Hãy cùng thử AI về chủ đề nhé!</h1>
+        <div className="content">
+          <div className='content-input'>
+            <div className="prompt-list">
+              {prompts.map((prompt, index) => (
+                <div
+                  key={index}
+                  className={`prompt-item ${selectedPrompt === prompt ? 'selected' : ''}`}
+                  onClick={() => setSelectedPrompt(prompt)}
+                >
+                  <Brightness5Icon />
+                  <p>{prompt}</p>
+                </div>
+              ))}
             </div>
-
+            <Button
+              variant="contained"
+              className="btn-generate-prompt"
+              onClick={generatePrompt}
+              disabled={loading}
+            >
+              {loading ? "Đang phân tích..." : "Xác nhận"}
+            </Button>
+            {error && <p style={{ color: "#ffffff" }}>{error}</p>}
+          </div>
+          <div className='content-result'>
+            <div className='result'>
+              {resultText && (
+                <Markdown>{resultText}</Markdown>
+              )}
+            </div>
+            <div className='note'>
+              <InfoIcon className='info-icon' />
+              <div>
+                <p>Cảnh báo: Nội dung do AI tạo ra có thể không chính xác.</p>
+                <p>Vui lòng kiểm tra trước khi sử dụng nội dung.</p>
+              </div>
+            </div>
           </div>
         </div>
-
       </div>
+      <div className="audio-player">
+        <div className="audio-container">
+          <p className='title'>Lắng nghe âm nhạc</p>
+          {/* <audio controls src={audio} type="audio/mp3" className="audio-player" /> */}
+          <ContentAudio audio={audio} />
+        </div>
+      </div>
+
     </div>
   );
 }

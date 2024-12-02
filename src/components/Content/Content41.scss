@@ -2,10 +2,6 @@
 
 .content-41 {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   padding: 20px;
   background-color: transparent;
 
@@ -19,6 +15,13 @@
       grid-template-columns: 1fr;
       padding: 0 1.2rem;
     }
+  }
+
+  .content-ai {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   .content-input {
@@ -164,5 +167,36 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+  }
+
+  .audio-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 250px;
+  }
+
+  .audio-container {
+    background-color: rgba(126, 0, 0);
+    width: 70%;
+    min-height: 50px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+
+    @media (max-width: 1024px) {
+      width: 95%;
+      padding: 10px 0;
+    }
+
+    .title {
+      font-size: 22px;
+      text-align: center;
+      width: 100%;
+      font-weight: 600;
+      margin-top: 35px;
+    }
   }
 }
