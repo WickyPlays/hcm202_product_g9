@@ -105,6 +105,12 @@
 
   }
 
+  .content-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .result {
     padding: 10px 20px;
     border-radius: 5px;
@@ -130,6 +136,12 @@
     @media (max-width: 768px) {
       font-size: 14px;
     }
+  }
+
+  .note {
+    font-size: 12px;
+    display: flex;
+    gap: 5px;
   }
 
   .title {

@@ -4,6 +4,7 @@ import './Content41.scss';
 import { Button } from "@mui/material";
 import Markdown from 'react-markdown';
 import Brightness5Icon from '@mui/icons-material/Brightness5';
+import InfoIcon from '@mui/icons-material/Info';
 
 export default function Content41() {
   const prompts = [
@@ -12,6 +13,7 @@ export default function Content41() {
     "Giải thích khái niệm 'tự do' trong tư tưởng Hồ Chí Minh bằng ví dụ thực tế.",
     "Kể một câu chuyện lịch sử Việt Nam thể hiện tinh thần đoàn kết.",
     "Phân tích vai trò của thế hệ trẻ trong việc phát huy tinh thần đoàn kết quốc tế.",
+    "Lời bài hát về tư tưởng Hồ Chí Minh về đoàn kết quốc tế.",
   ];
 
 
@@ -70,11 +72,22 @@ export default function Content41() {
           </Button>
           {error && <p style={{ color: "#ffffff" }}>{error}</p>}
         </div>
-        <div className='result'>
-          {resultText && (
-            <Markdown>{resultText}</Markdown>
-          )}
+        <div className='content-result'>
+          <div className='result'>
+            {resultText && (
+              <Markdown>{resultText}</Markdown>
+            )}
+          </div>
+          <div className='note'>
+            <InfoIcon className='info-icon' />
+            <div>
+              <p>Cảnh báo: Nội dung do AI tạo ra có thể không chính xác.</p>
+              <p>Vui lòng kiểm tra trước khi sử dụng nội dung.</p>
+            </div>
+
+          </div>
         </div>
+
       </div>
     </div>
   );
