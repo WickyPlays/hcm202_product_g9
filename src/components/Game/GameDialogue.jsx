@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ReactDOM from 'react-dom';
 import Dialog from '@mui/material/Dialog';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
@@ -13,33 +14,89 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function GameDialogue({ open, setOpen = () => { } }) {
+export default function GameDialogue({ open, setOpen = () => {} }) {
   const [elapsedTime, setElapsedTime] = useState(0);
   const [answers, setAnswers] = useState({});
   const [score, setScore] = useState(null);
+  const [showResults, setShowResults] = useState(false);
 
   const questions = [
     {
       id: 1,
-      question: 'What is the key theme of Hồ Chí Minh\'s international solidarity?',
+      question: 'Theo Hồ Chí Minh, mục tiêu cao nhất của đoàn kết quốc tế là gì?',
       options: [
-        { key: 'A', text: 'Unity in diversity' },
-        { key: 'B', text: 'Economic cooperation only' },
-        { key: 'C', text: 'Political alliances only' },
-        { key: 'D', text: 'Self-sufficiency' },
+        { key: 'A', text: 'Thống nhất chính trị toàn cầu' },
+        { key: 'B', text: 'Hòa bình và tự do cho các dân tộc' },
+        { key: 'C', text: 'Tăng cường sức mạnh kinh tế' },
+        { key: 'D', text: 'Tạo ra các liên minh quân sự mạnh mẽ' },
       ],
-      correctAnswer: 'A',
+      correctAnswer: 'B',
     },
     {
       id: 2,
-      question: 'Which value did Hồ Chí Minh emphasize in unity?',
+      question: 'Yếu tố nào được Hồ Chí Minh xem là nền tảng của đoàn kết quốc tế?',
       options: [
-        { key: 'A', text: 'Individualism' },
-        { key: 'B', text: 'Mutual respect' },
-        { key: 'C', text: 'Cultural superiority' },
-        { key: 'D', text: 'Military strength' },
+        { key: 'A', text: 'Sự thống trị của các quốc gia lớn' },
+        { key: 'B', text: 'Tôn trọng độc lập và chủ quyền' },
+        { key: 'C', text: 'Phụ thuộc lẫn nhau về kinh tế' },
+        { key: 'D', text: 'Cạnh tranh quyền lực toàn cầu' },
       ],
       correctAnswer: 'B',
+    },
+    {
+      id: 3,
+      question: 'Hồ Chí Minh nhấn mạnh điều gì là cần thiết để duy trì đoàn kết quốc tế?',
+      options: [
+        { key: 'A', text: 'Tăng cường sức mạnh quân sự' },
+        { key: 'B', text: 'Sự chân thành và lòng tin' },
+        { key: 'C', text: 'Lợi ích kinh tế chung' },
+        { key: 'D', text: 'Kiểm soát lẫn nhau' },
+      ],
+      correctAnswer: 'B',
+    },
+    {
+      id: 4,
+      question: 'Hồ Chí Minh cho rằng vai trò của các nước nhỏ trong đoàn kết quốc tế là gì?',
+      options: [
+        { key: 'A', text: 'Phụ thuộc vào các nước lớn' },
+        { key: 'B', text: 'Đóng góp vào sự nghiệp chung' },
+        { key: 'C', text: 'Trung lập và không tham gia' },
+        { key: 'D', text: 'Chỉ nhận viện trợ từ các nước phát triển' },
+      ],
+      correctAnswer: 'B',
+    },
+    {
+      id: 5,
+      question: 'Trong tư tưởng Hồ Chí Minh, đoàn kết quốc tế cần hướng đến điều gì?',
+      options: [
+        { key: 'A', text: 'Lợi ích riêng của từng quốc gia' },
+        { key: 'B', text: 'Giải phóng dân tộc và quyền bình đẳng' },
+        { key: 'C', text: 'Sự cạnh tranh về tài nguyên' },
+        { key: 'D', text: 'Thống trị các nước yếu hơn' },
+      ],
+      correctAnswer: 'B',
+    },
+    {
+      id: 6,
+      question: 'Hồ Chí Minh xem đoàn kết quốc tế là công cụ để đạt được điều gì?',
+      options: [
+        { key: 'A', text: 'Sự phát triển kinh tế nhanh chóng' },
+        { key: 'B', text: 'Hòa bình lâu dài và quyền tự quyết' },
+        { key: 'C', text: 'Tăng cường sức mạnh chính trị' },
+        { key: 'D', text: 'Cạnh tranh ảnh hưởng trong khu vực' },
+      ],
+      correctAnswer: 'B',
+    },
+    {
+      id: 7,
+      question: 'Tư tưởng đoàn kết quốc tế của Hồ Chí Minh đặt trọng tâm vào yếu tố nào?',
+      options: [
+        { key: 'A', text: 'Cùng hợp tác vì lợi ích chung' },
+        { key: 'B', text: 'Áp đặt hệ tư tưởng' },
+        { key: 'C', text: 'Thống trị các dân tộc yếu hơn' },
+        { key: 'D', text: 'Cạnh tranh về tài chính' },
+      ],
+      correctAnswer: 'A',
     },
   ];
 
@@ -66,21 +123,33 @@ export default function GameDialogue({ open, setOpen = () => { } }) {
       }
     });
     setScore(calculatedScore);
+    setShowResults(true);
+
+    const dialogElement = ReactDOM.findDOMNode(document.querySelector('.MuiPaper-root'));
+    if (dialogElement) {
+      dialogElement.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const handleReset = () => {
+    setElapsedTime(0);
+    setScore(null);
+    setAnswers({});
+    setShowResults(false);
   };
 
   const handleClose = () => {
     setOpen(false);
-    setScore(null);
-    setAnswers({});
+    handleReset();
   };
-
-  const allAnswered = Object.keys(answers).length === questions.length;
 
   const formatTime = (time) => {
     const minutes = String(Math.floor(time / 60)).padStart(2, '0');
     const seconds = String(time % 60).padStart(2, '0');
     return `${minutes}:${seconds}`;
   };
+
+  const allAnswered = Object.keys(answers).length === questions.length;
 
   return (
     <div className="game-dialog">
@@ -105,24 +174,62 @@ export default function GameDialogue({ open, setOpen = () => { } }) {
         </div>
 
         <div className="dialog-content">
-          <div className="timer">Time Elapsed: {formatTime(elapsedTime)}</div>
-          <div className='question-container'>
+          <div className="timer">
+            <p>Time Elapsed: <strong>{formatTime(elapsedTime)}</strong></p>
+            <p>No. of questions: <strong>{questions.length}</strong></p>
+          </div>
+
+          <div>
+            {score !== null && (
+              <div className="score">
+                <p>Your Score: {score}/{questions.length}</p>
+                <Button
+                  variant="outlined"
+                  color="secondary"
+                  onClick={handleReset}
+                  className="btn-reset"
+                >
+                  Reset progress
+                </Button>
+              </div>
+            )}
+          </div>
+
+          <div className="question-container">
             {questions.map((q) => (
               <div key={q.id} className="question-block">
-                <p>{q.question}</p>
-                <RadioGroup
-                  value={answers[q.id] || ''}
-                  onChange={(e) => handleAnswerChange(q.id, e.target.value)}
-                >
-                  {q.options.map((option) => (
-                    <FormControlLabel
-                      key={option.key}
-                      value={option.key}
-                      control={<Radio />}
-                      label={option.text}
-                    />
-                  ))}
-                </RadioGroup>
+                <p>
+                  <span className="question-number">{q.id}</span> {q.question}
+                </p>
+                <div className="answer-block">
+                  <RadioGroup
+                    value={answers[q.id] || ''}
+                    onChange={(e) => handleAnswerChange(q.id, e.target.value)}
+                    disabled={showResults}
+                  >
+                    {q.options.map((option) => (
+                      <FormControlLabel
+                        key={option.key}
+                        value={option.key}
+                        control={<Radio />}
+                        label={
+                          <span>
+                            {option.text}{' '}
+                            {showResults && (
+                              <>
+                                {q.correctAnswer === option.key ? (
+                                  <span className="mark correct-mark">✔</span>
+                                ) : answers[q.id] === option.key ? (
+                                  <span className="mark incorrect-mark">✘</span>
+                                ) : null}
+                              </>
+                            )}
+                          </span>
+                        }
+                      />
+                    ))}
+                  </RadioGroup>
+                </div>
               </div>
             ))}
           </div>
@@ -130,13 +237,12 @@ export default function GameDialogue({ open, setOpen = () => { } }) {
           <Button
             variant="contained"
             color="primary"
-            disabled={!allAnswered}
+            disabled={!allAnswered || showResults}
             onClick={handleSubmit}
-            className="submit-button"
+            className="btn-submit"
           >
-            Submit
+            Kiểm tra kết quả
           </Button>
-          {score !== null && <div className="score">Your Score: {score}/{questions.length}</div>}
         </div>
       </Dialog>
     </div>

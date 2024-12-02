@@ -6,6 +6,7 @@ import Markdown from 'react-markdown';
 import Brightness5Icon from '@mui/icons-material/Brightness5';
 import InfoIcon from '@mui/icons-material/Info';
 import audio from '../../assets/ai_music.mp3';
+import AudiotrackIcon from '@mui/icons-material/Audiotrack';
 import ContentAudio from "./ContentAudio";
 
 export default function Content41() {
@@ -93,7 +94,11 @@ export default function Content41() {
       </div>
       <div className="audio-player">
         <div className="audio-container">
-          <p className='title'>Lắng nghe âm nhạc</p>
+          <div className='title'>
+            <AudiotrackIcon />
+            <p>Lắng nghe âm nhạc</p>
+            <AudiotrackIcon />
+          </div>
           {/* <audio controls src={audio} type="audio/mp3" className="audio-player" /> */}
           <ContentAudio audio={audio} />
         </div>

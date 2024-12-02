@@ -62,6 +62,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 10px;
   }
 
   .progress-bar {
@@ -78,5 +79,10 @@
     width: 0;
     background-color: yellow;
     transition: width 0.1s linear;
+  }
+
+  .lyric-display {
+    margin-top: 15px;
+    min-height: 30px;
   }
 }

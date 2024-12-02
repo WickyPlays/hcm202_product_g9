@@ -8,7 +8,7 @@
   }
 
   .MuiPaper-root {
-    background-color: rgb(126, 0, 0) !important;
+    background-color: rgb(187, 0, 0) !important;
     color: #fff;
   }
 
@@ -37,12 +37,16 @@
     align-items: center;
 
     .timer {
-      font-size: 16px;
-      margin-bottom: 10px;
+      width: 100%;
+      font-size: 21px;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 25rem;
     }
 
     .question-block {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
 
       p {
         margin-bottom: 10px;
@@ -54,14 +58,86 @@
       }
     }
 
-    .submit-button {
-      margin-top: 20px;
+    .question-number {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #FFF;
+      color: #000 !important;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 10px;
+      font-weight: 600;
+    }
+
+    .btn-submit {
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 9px;
+      background-color: $primary-color;
+      color: #000;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      margin-top: 50px;
+      margin-bottom: 150px;
+      text-transform: none;
+      width: 40%;
+
+      &:disabled {
+        background-color: #cccccca9;
+        color: #666;
+        cursor: not-allowed;
+      }
     }
 
     .score {
       margin-top: 10px;
       font-size: 18px;
       font-weight: bold;
+      margin-bottom: 30px;
+      display: flex;
+      gap: 25px;
+      align-items: center;
+      background-color: #ffe60081;
+      border: 2px solid  #ffe600;
+      padding: 10px 50px;
+      border-radius: 15px;
+    }
+
+    .btn-reset {
+      padding: 2px 20px;
+      font-size: 16px;
+      border-radius: 9px;
+      background-color: $primary-color;
+      color: #000;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      text-transform: none;
+    }
+
+    .answer-block {
+      padding: 0 2rem;
+    }
+
+    .MuiButtonBase-root * * {
+      color: #fff !important;
+    }
+
+    .mark {
+      margin-left: 8px;
+      color: #000;
+      width: 24px;
+      height: 24px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background-color: #FFF;
+      font-weight: 600;
+      font-size: 13px;
     }
   }
 }
